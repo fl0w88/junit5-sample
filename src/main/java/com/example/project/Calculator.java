@@ -12,8 +12,52 @@ package com.example.project;
 
 public class Calculator {
 
-	public int add(int a, int b) {
-		return a + b;
+    public String authorName = "John Doe";
+    public String authorEmail = "john.doe@gmail.com";
+
+    public double add(double... params) {
+		checkArguments(params);
+        double result = 0;
+        for (int i = 0; i < params.length; i++) {
+            result += params[i];
+        }
+        return result;
+    }
+
+    public double multiply(double... params) {
+		checkArguments(params);
+        double result = 1;
+        for (int i = 0; i < params.length; i++) {
+            result *= params[i];
+        }
+        return result;
+    }
+
+    public double subtract(double... params) {
+		checkArguments(params);
+        double result = params[0];
+        for (int i = 1; i < params.length; i++) {
+            result -= params[i];
+        }
+        return result;
+    }
+
+    public double divide(double... params) {
+		checkArguments(params);
+        double result = params[0];
+        for (int i = 1; i < params.length; i++) {
+            if (params[i] == 0) {
+                throw new IllegalArgumentException("Cannot divide something by 0.");
+            }
+            result /= params[i];
+        }
+        return result;
+    }
+
+    private void checkArguments(double... params) {
+		if (params.length < 2) {
+			throw new IllegalArgumentException("At least two arguments must be provided!");
+		}
 	}
 
 }
