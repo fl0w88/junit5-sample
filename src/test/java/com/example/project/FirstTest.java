@@ -21,7 +21,7 @@ public class FirstTest {
 
     // before we start, we must initialize our Calculator
     @BeforeEach
-    public void datenInitialisierung() {
+    public void init() {
         // this is how we 'create' a new Calculator
         myCalculator = new Calculator();
     }
@@ -55,7 +55,7 @@ public class FirstTest {
     void negativeTest1() {
         boolean exceptionOcurred = false;
         try {
-            Assertions.assertEquals(0, myCalculator.add());
+            Assertions.assertEquals(0, myCalculator.subtract());
         } catch (IllegalArgumentException e) {
             exceptionOcurred = true;
         }
@@ -65,6 +65,15 @@ public class FirstTest {
 	@Test
 	@DisplayName("Calculator - Division By 0 Test")
 	void negativeTest2() {
-		// TO DO
+		// TODO
+        Assertions.fail();
 	}
+
+    @Test
+    @DisplayName("Calculator - Check Author Test")
+    void authorCheckTest() {
+        // TODO
+        Assertions.fail();
+    }
+
 }

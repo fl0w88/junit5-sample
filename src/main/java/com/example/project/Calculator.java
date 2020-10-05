@@ -16,7 +16,6 @@ public class Calculator {
     public String authorEmail = "john.doe@gmail.com";
 
     public double add(double... params) {
-		checkArguments(params);
         double result = 0;
         for (int i = 0; i < params.length; i++) {
             result += params[i];
@@ -56,8 +55,8 @@ public class Calculator {
 
     private void checkArguments(double... params) {
 		if (params.length < 2) {
-			throw new IllegalArgumentException("At least two arguments must be provided!");
-		}
+            throw new IllegalArgumentException("At least two arguments must be provided!");
+        }
 	}
 
 }
