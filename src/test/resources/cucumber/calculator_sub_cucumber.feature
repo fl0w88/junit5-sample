@@ -6,6 +6,6 @@ Feature: Is my calculator working 2
     Then I get the result <r>
 
     Examples:
-      | a  | b | r |
-      | 10 | 2 | 8 |
-      | 5  | 5 | 0 |
+      | a    | b   | r   |
+      | 10.3 | 2.4 | 7.9 |
+      | 5    | 5   | 0   |

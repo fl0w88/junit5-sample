@@ -10,15 +10,27 @@
 
 package com.example.project;
 
+import java.math.BigDecimal;
+
 public class Calculator {
 
     public String authorName = "John Doe";
     public String authorEmail = "john.doe@gmail.com";
 
     public double add(double... params) {
+        checkArguments(params);
         double result = 0;
         for (int i = 0; i < params.length; i++) {
             result += params[i];
+        }
+        return result;
+    }
+
+    public BigDecimal add(BigDecimal... params) {
+        checkArguments(params);
+        BigDecimal result = new BigDecimal("0");
+        for (int i = 0; i < params.length; i++) {
+            result = result.add(params[i]);
         }
         return result;
     }
@@ -32,11 +44,29 @@ public class Calculator {
         return result;
     }
 
+    public BigDecimal multiply(BigDecimal... params) {
+        checkArguments(params);
+        BigDecimal result = new BigDecimal("1");
+        for (int i = 0; i < params.length; i++) {
+            result = result.multiply(params[i]);
+        }
+        return result;
+    }
+
     public double subtract(double... params) {
 		checkArguments(params);
         double result = params[0];
         for (int i = 1; i < params.length; i++) {
             result -= params[i];
+        }
+        return result;
+    }
+
+    public BigDecimal subtract(BigDecimal... params) {
+        checkArguments(params);
+        BigDecimal result = params[0];
+        for (int i = 1; i < params.length; i++) {
+            result = result.subtract(params[i]);
         }
         return result;
     }
@@ -53,7 +83,19 @@ public class Calculator {
         return result;
     }
 
-    private void checkArguments(double... params) {
+    public BigDecimal divide(BigDecimal... params) {
+        checkArguments(params);
+        BigDecimal result = params[0];
+        for (int i = 1; i < params.length; i++) {
+            if (params[i].compareTo(BigDecimal.ZERO) == 0) {
+                throw new IllegalArgumentException("Cannot divide something by 0.");
+            }
+            result = result.divide(params[i]);
+        }
+        return result;
+    }
+
+    private void checkArguments(Object... params) {
 		if (params.length < 2) {
             throw new IllegalArgumentException("At least two arguments must be provided!");
         }
