@@ -53,27 +53,40 @@ public class FirstTest {
     @Test
     @DisplayName("Calculator - Invalid Parameter Test")
     void negativeTest1() {
-        boolean exceptionOcurred = false;
+        boolean exceptionOccurred = false;
         try {
-            Assertions.assertEquals(0, myCalculator.subtract());
-        } catch (IllegalArgumentException e) {
-            exceptionOcurred = true;
+            myCalculator.subtract(8);
+            System.out.println("Ich werde bei einem Fehler NICHT ausgeführt.");
+        } catch (Exception e) {
+            System.out.println("Ich habe einen Fehler aufgefangen.");
+            exceptionOccurred = true;
         }
-        Assertions.assertTrue(exceptionOcurred);
+        Assertions.assertTrue(exceptionOccurred);
     }
 
-	@Test
-	@DisplayName("Calculator - Division By 0 Test")
-	void negativeTest2() {
-		// TODO
-        Assertions.fail();
-	}
+    @Test
+    @DisplayName("Calculator - Division By 0 Test")
+    void negativeTest2() {
+        boolean exceptionOccurred = false;
+        try {
+            myCalculator.divide(8, 0);
+        } catch (Exception e) {
+            exceptionOccurred = true;
+        }
+        Assertions.assertTrue(exceptionOccurred);
+    }
 
     @Test
     @DisplayName("Calculator - Check Author Test")
     void authorCheckTest() {
-        // TODO
-        Assertions.fail();
+        Assertions.assertNotNull(myCalculator.authorName);
+        Assertions.assertEquals("John Doe", myCalculator.authorName);
+    }
+
+
+    @Test
+    void test123() {
+        // leer
     }
 
 }
