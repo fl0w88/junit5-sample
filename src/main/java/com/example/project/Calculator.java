@@ -95,10 +95,16 @@ public class Calculator {
         return result;
     }
 
-    private void checkArguments(Object... params) {
+    private void checkArguments(double... params) {
 		if (params.length < 2) {
             throw new IllegalArgumentException("At least two arguments must be provided!");
         }
 	}
+
+    private void checkArguments(BigDecimal... params) {
+        if (params.length < 2) {
+            throw new IllegalArgumentException("At least two arguments must be provided!");
+        }
+    }
 
 }
