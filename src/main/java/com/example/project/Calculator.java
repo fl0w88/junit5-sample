@@ -11,6 +11,8 @@
 package com.example.project;
 
 import java.math.BigDecimal;
+import java.math.MathContext;
+import java.math.RoundingMode;
 
 public class Calculator {
 
@@ -86,11 +88,12 @@ public class Calculator {
     public BigDecimal divide(BigDecimal... params) {
         checkArguments(params);
         BigDecimal result = params[0];
+        MathContext m = new MathContext(4);
         for (int i = 1; i < params.length; i++) {
             if (params[i].compareTo(BigDecimal.ZERO) == 0) {
                 throw new IllegalArgumentException("Cannot divide something by 0.");
             }
-            result = result.divide(params[i]);
+            result = result.divide(params[i], 2, RoundingMode.HALF_UP);
         }
         return result;
     }

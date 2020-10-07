@@ -25,7 +25,8 @@ class DemoApplicationTests {
 
     @Test
     public void getHello() throws Exception {
-        mvc.perform(MockMvcRequestBuilders.get("/").accept(MediaType.APPLICATION_JSON))
+        mvc.perform(MockMvcRequestBuilders.get("/")
+                .accept(MediaType.APPLICATION_JSON))
                 .andExpect(status().isOk());
     }
 
@@ -34,7 +35,7 @@ class DemoApplicationTests {
         CalculationRequest calcRequest = new CalculationRequest();
         calcRequest.setA(new BigDecimal("3.2"));
         calcRequest.setB(new BigDecimal("4.3"));
-        calcRequest.setO("-");
+        calcRequest.setO("*");
         String contentToSend = new Gson().toJson(calcRequest);
 
         mvc.perform(MockMvcRequestBuilders.post("/calculator")
@@ -43,7 +44,7 @@ class DemoApplicationTests {
                 .accept(MediaType.APPLICATION_JSON))
                 .andExpect(status().isOk())
                 .andExpect(content().contentType(MediaType.APPLICATION_JSON))
-                .andExpect(jsonPath("$.result").value(new BigDecimal("-1.1")))
+                .andExpect(jsonPath("$.result").value(new BigDecimal("13.760000").stripTrailingZeros()))
         ;
     }
 
