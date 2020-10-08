@@ -1,4 +1,4 @@
-package com.example.project.cucumber.steps;
+package com.example.project.bdd.steps;
 
 import com.example.project.Calculator;
 import io.cucumber.java.en.Given;

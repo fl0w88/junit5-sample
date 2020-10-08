@@ -1,4 +1,4 @@
-package com.example.project.selenium;
+package com.example.project.tests;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.junit.jupiter.api.AfterEach;
@@ -11,6 +11,9 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import java.time.Duration;
+
+import static org.openqa.selenium.support.ui.ExpectedConditions.elementToBeClickable;
 import static org.openqa.selenium.support.ui.ExpectedConditions.presenceOfElementLocated;
 
 public class ChromeTest {
@@ -32,18 +35,18 @@ public class ChromeTest {
 
     @Test
     public void test() throws Exception {
-        WebDriverWait wait = new WebDriverWait(driver, 30);
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30));
         driver.get("https://tickets.oebb.at/en/ticket");
 
         By inputFrom = By.xpath("//div[@id='relationInputFrom']/input");
-        wait.until(presenceOfElementLocated(inputFrom));
+        wait.until(elementToBeClickable(inputFrom));
         WebElement element = driver.findElement(inputFrom);
         element.sendKeys("Wien Hbf (U)");
         wait.until(presenceOfElementLocated(By.xpath("//span[text()='Wien Hbf (U)']")));
         element.sendKeys(Keys.ENTER);
 
         By inputTo = By.xpath("//div[@id='relationInputTo']/input");
-        wait.until(presenceOfElementLocated(inputTo));
+        wait.until(elementToBeClickable(inputTo));
         WebElement element2 = driver.findElement(inputTo);
         element2.sendKeys("Salzburg Hbf");
         wait.until(presenceOfElementLocated(By.xpath("//span[text()='Salzburg Hbf']")));
@@ -64,6 +67,6 @@ public class ChromeTest {
         WebElement addToBasketButton = driver.findElement(addToBasket);
         addToBasketButton.click();
 
-        Thread.sleep(10000);
+        Thread.sleep(2000);
     }
 }

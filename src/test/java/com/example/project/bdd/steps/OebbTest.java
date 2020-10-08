@@ -1,4 +1,4 @@
-package com.example.project.cucumber.steps;
+package com.example.project.bdd.steps;
 
 import io.cucumber.java.After;
 import io.cucumber.java.en.And;
