@@ -15,8 +15,6 @@ public class Base64Test extends TestCaseBase {
         String testResult = b64App().base64Keywords().encodeTest();
 
         Assertions.assertEquals("bXVzdGVy", testResult);
-
-        Base64Keywords.waitALittle();
     }
 
 }

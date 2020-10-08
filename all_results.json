@@ -1,0 +1,197 @@
+[
+  {
+    "line": 1,
+    "elements": [
+      {
+        "start_timestamp": "2020-10-07T10:48:21.681Z",
+        "line": 12,
+        "name": "I want to book a journey",
+        "description": "",
+        "id": "book-a-journey;i-want-to-book-a-journey;;2",
+        "after": [
+          {
+            "result": {
+              "duration": 1145696000,
+              "status": "passed"
+            },
+            "match": {
+              "location": "com.example.project.cucumber.steps.OebbTest.teardown()"
+            }
+          }
+        ],
+        "type": "scenario",
+        "keyword": "Scenario Outline",
+        "steps": [
+          {
+            "result": {
+              "duration": 3839333500,
+              "status": "passed"
+            },
+            "line": 4,
+            "name": "I am using chrome",
+            "match": {
+              "location": "com.example.project.cucumber.steps.OebbTest.configureChrome()"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 793715500,
+              "status": "passed"
+            },
+            "line": 5,
+            "name": "I am on the OEBB Ticketshop homepage",
+            "match": {
+              "location": "com.example.project.cucumber.steps.OebbTest.goToOebbHomepage()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 3270542800,
+              "status": "passed"
+            },
+            "line": 6,
+            "name": "I search for a journey from Wien Hbf (U) to Salzburg Hbf",
+            "match": {
+              "arguments": [
+                {
+                  "val": "Wien Hbf (U)",
+                  "offset": 28
+                },
+                {
+                  "val": "Salzburg Hbf",
+                  "offset": 44
+                }
+              ],
+              "location": "com.example.project.cucumber.steps.OebbTest.searchForJourney(java.lang.String,java.lang.String)"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 716190600,
+              "status": "passed"
+            },
+            "line": 7,
+            "name": "I click on the find connections button",
+            "match": {
+              "location": "com.example.project.cucumber.steps.OebbTest.clickButton()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 1334871100,
+              "status": "passed"
+            },
+            "line": 8,
+            "name": "I receive a result list",
+            "match": {
+              "location": "com.example.project.cucumber.steps.OebbTest.checkResult()"
+            },
+            "keyword": "Then "
+          }
+        ]
+      },
+      {
+        "start_timestamp": "2020-10-07T10:48:32.883Z",
+        "line": 13,
+        "name": "I want to book a journey",
+        "description": "",
+        "id": "book-a-journey;i-want-to-book-a-journey;;3",
+        "after": [
+          {
+            "result": {
+              "duration": 1388528600,
+              "status": "passed"
+            },
+            "match": {
+              "location": "com.example.project.cucumber.steps.OebbTest.teardown()"
+            }
+          }
+        ],
+        "type": "scenario",
+        "keyword": "Scenario Outline",
+        "steps": [
+          {
+            "result": {
+              "duration": 3284413700,
+              "status": "passed"
+            },
+            "line": 4,
+            "name": "I am using chrome",
+            "match": {
+              "location": "com.example.project.cucumber.steps.OebbTest.configureChrome()"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 1636245500,
+              "status": "passed"
+            },
+            "line": 5,
+            "name": "I am on the OEBB Ticketshop homepage",
+            "match": {
+              "location": "com.example.project.cucumber.steps.OebbTest.goToOebbHomepage()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 2707551300,
+              "status": "passed"
+            },
+            "line": 6,
+            "name": "I search for a journey from Wien Hbf (U) to Graz Hbf",
+            "match": {
+              "arguments": [
+                {
+                  "val": "Wien Hbf (U)",
+                  "offset": 28
+                },
+                {
+                  "val": "Graz Hbf",
+                  "offset": 44
+                }
+              ],
+              "location": "com.example.project.cucumber.steps.OebbTest.searchForJourney(java.lang.String,java.lang.String)"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 815214200,
+              "status": "passed"
+            },
+            "line": 7,
+            "name": "I click on the find connections button",
+            "match": {
+              "location": "com.example.project.cucumber.steps.OebbTest.clickButton()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 1208560000,
+              "status": "passed"
+            },
+            "line": 8,
+            "name": "I receive a result list",
+            "match": {
+              "location": "com.example.project.cucumber.steps.OebbTest.checkResult()"
+            },
+            "keyword": "Then "
+          }
+        ]
+      }
+    ],
+    "name": "Book a journey",
+    "description": "",
+    "id": "book-a-journey",
+    "keyword": "Feature",
+    "uri": "file:src/test/resources/cucumber/oebb_journey.feature",
+    "tags": []
+  }
+]
