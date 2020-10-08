@@ -9,7 +9,7 @@ import java.time.Duration;
 
 public class Base64Keywords {
 
-    private WebDriver driver;
+    private static WebDriver driver;
     private WebDriverWait wait = null;
 
     private void init() {
